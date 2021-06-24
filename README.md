@@ -2,4 +2,4 @@
 
 _Feature 1:_
 
-Display Bank Name List
+Display Bank Name List (Using JSON)
