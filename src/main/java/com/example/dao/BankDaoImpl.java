@@ -12,6 +12,9 @@ public class BankDaoImpl implements BankDao {
 
 	JdbcTemplate jdbcTemplate = ConnectionUtil.getJdbcTemplate();
 
+	/**
+	 * This method used to get the bank name list from DB
+	 */
 	@Override
 	public List<String> getBankNameList() {
 		String sql = "select bankname from banknamelist where bankname!=''";

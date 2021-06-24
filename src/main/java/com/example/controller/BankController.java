@@ -10,11 +10,15 @@ import com.example.dao.BankDaoImpl;
 @RestController
 public class BankController {
 
+	/**
+	 * This method used to get the bank name list
+	 * 
+	 * @return
+	 */
 	@GetMapping("BankNameListServlet")
 	public List<String> getBankNameList() {
-		System.out.println("hi.....");
-		BankDaoImpl b = new BankDaoImpl();
-		return b.getBankNameList();
+		BankDaoImpl bank = new BankDaoImpl();
+		return bank.getBankNameList();
 	}
 
 }
