@@ -18,7 +18,7 @@ public class BankDaoImpl implements BankDao {
 	 */
 	@Override
 	public List<String> getBankNameList() {
-		String sql = "select bankname from banknamelist where bankname!=''";
+		String sql = "select bank_name from bank_details where bank_name!=''";
 		List<String> bankNameList = jdbcTemplate.queryForList(sql, String.class);
 		return bankNameList;
 	}
