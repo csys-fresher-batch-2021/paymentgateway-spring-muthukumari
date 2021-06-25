@@ -1,10 +1,9 @@
 package com.example.util;
 
-import java.sql.SQLException;
-
 import javax.sql.DataSource;
 
 import org.apache.commons.dbcp2.BasicDataSource;
+import org.springframework.context.annotation.Bean;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 public class ConnectionUtil {
@@ -18,19 +17,16 @@ public class ConnectionUtil {
 	private static final String DB_USERNAME = System.getenv("spring.datasource.username");
 	private static final String DB_PASSWORD = System.getenv("spring.datasource.password");
 
-	/**
-	 * This method used to get the DB connection
-	 * 
-	 * @return
-	 * @throws ClassNotFoundException
-	 * @throws SQLException
-	 */
+	@Bean
 	public static JdbcTemplate getJdbcTemplate() {
 		DataSource dataSource = getDataSource();
 		return new JdbcTemplate(dataSource);
 
 	}
 
+	/**
+	 * This method used to get the DB connection
+	 */
 	private static DataSource getDataSource() {
 		BasicDataSource ds = new BasicDataSource();
 		ds.setDriverClassName(DRIVER_CLASS_NAME);

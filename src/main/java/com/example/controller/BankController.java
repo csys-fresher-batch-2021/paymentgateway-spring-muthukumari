@@ -5,7 +5,8 @@ import java.util.List;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.dao.BankDaoImpl;
+import com.example.factorymethod.BankFactory;
+import com.example.implementation.BankDaoImpl;
 
 @RestController
 public class BankController {
@@ -17,7 +18,7 @@ public class BankController {
 	 */
 	@GetMapping("BankNameListServlet")
 	public List<String> getBankNameList() {
-		BankDaoImpl bank = new BankDaoImpl();
+		BankDaoImpl bank = BankFactory.getInstance();
 		return bank.getBankNameList();
 	}
 
