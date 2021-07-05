@@ -3,9 +3,9 @@
  */
 function getBankNameList() {
 	let url = "BankNameListServlet";
-	fetch(url).then(res => res.json()).then(res => {
+	axios.get(url).then(res => {
 		console.log(res);
-		let bankNames = res;
+		let bankNames = res.data;
 		let serial = 1;
 		let content = "";
 		for (let bankNameList of bankNames) {

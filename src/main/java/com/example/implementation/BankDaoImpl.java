@@ -2,14 +2,12 @@ package com.example.implementation;
 
 import java.util.List;
 
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.jdbc.core.JdbcTemplate;
 
-import com.example.dao.BankDao;
+import com.example.dao.BankDAO;
 import com.example.util.ConnectionUtil;
 
-@SpringBootApplication
-public class BankDaoImpl implements BankDao {
+public class BankDaoImpl implements BankDAO {
 
 	JdbcTemplate jdbcTemplate = ConnectionUtil.getJdbcTemplate();
 

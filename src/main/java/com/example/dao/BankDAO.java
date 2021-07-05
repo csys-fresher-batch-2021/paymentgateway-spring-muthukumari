@@ -2,7 +2,7 @@ package com.example.dao;
 
 import java.util.List;
 
-public interface BankDao {
+public interface BankDAO {
 
 	public List<String> getBankNameList();
 }
